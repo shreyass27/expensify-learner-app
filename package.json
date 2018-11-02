@@ -7,6 +7,7 @@
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack",
+    "build-prod": "webpack -p --env prod",
     "dev-server": "webpack-dev-server"
   },
   "dependencies": {
@@ -18,6 +19,7 @@
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
     "css-loader": "0.28.4",
+    "extract-text-webpack-plugin": "3.0.0",
     "live-server": "^1.2.0",
     "moment": ">=2.19.3",
     "node-sass": "4.5.3",
