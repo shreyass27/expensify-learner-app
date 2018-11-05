@@ -5,11 +5,10 @@
   "author": "Shreyas Shetty",
   "license": "MIT",
   "scripts": {
-    "serve": "live-server public/",
     "build-dev": "webpack",
     "build-prod": "webpack -p --env prod",
     "dev-server": "webpack-dev-server",
-    "node-server": "node server/server.js"
+    "start": "node server/server.js"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
@@ -22,10 +21,11 @@
     "css-loader": "0.28.4",
     "express": "4.15.4",
     "extract-text-webpack-plugin": "3.0.0",
-    "live-server": "^1.2.0",
+    "firebase": "4.2.0",
     "moment": ">=2.19.3",
     "node-sass": "4.5.3",
     "normalize.css": "7.0.0",
+    "numeral": "2.0.6",
     "react": "15.6.1",
     "react-addons-shallow-compare": "15.6.0",
     "react-dates": "12.7.0",
@@ -34,11 +34,14 @@
     "react-redux": "5.0.5",
     "react-router-dom": "4.2.2",
     "redux": "3.7.2",
+    "redux-thunk": "2.2",
     "sass-loader": "6.0.6",
     "style-loader": "0.18.2",
     "uuid": "3.1.0",
     "validator": "8.0.0",
-    "webpack": "3.1.0",
+    "webpack": "3.1.0"
+  },
+  "devDependencies": {
     "webpack-dev-server": "2.5.1"
   }
 }
