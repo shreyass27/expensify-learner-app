@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render NotFoundPage Correctly 1`] = `
+<div>
+  $404 zhala ray baba 
+  <Link
+    replace={false}
+    to="/"
+  >
+    Home la za ray - "to" use karnar tu
+  </Link>
+</div>
+`;
