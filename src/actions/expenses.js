@@ -3,7 +3,7 @@ import dataBase from '../firebase/firebase';
 
 const handleError = (error) => console.log('Error Occured', error)
 
-const addExpense = (expense) => ({
+export const addExpense = (expense) => ({
     type: 'ADD_EXPENSE',
     expense
 });
@@ -57,7 +57,7 @@ export const startEditExpense = (id, updates) => {
 
 }
 
-const removeExpense = ({ id }) => ({
+export const removeExpense = ({ id }) => ({
     type: 'REMOVE_EXPENSE',
     id
 });
