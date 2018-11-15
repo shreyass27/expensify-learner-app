@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-const filters = {
+  const filters = {
     text: '',
     sortBy: 'date',
     startDate: undefined,

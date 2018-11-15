@@ -20,7 +20,6 @@ export const startAddExpense = (expenseData = {}) => {
         return dataBase.ref('expenses').push(expense)
             .then(
                 (snapShot) => {
-                    console.log(snapShot);
                     dispatch(addExpense({
                         id: snapShot.key,
                         ...expense
@@ -47,7 +46,6 @@ export const startEditExpense = (id, updates) => {
         return dataBase.ref(`expenses/${id}`).update(updates)
             .then(
                 (snapShot) => {
-                    console.log(snapShot);
                     dispatch(editExpense(id, updates));
                 }
             )
