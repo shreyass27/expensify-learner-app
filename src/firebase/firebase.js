@@ -12,5 +12,9 @@ const config = {
   firebase.initializeApp(config);
 
   const database = firebase.database();
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
+  const emailProvider = new firebase.auth.EmailAuthProvider()
+  // googleProvider.addScope('email');
+  // googleProvider.addScope('profile');
 
-  export { firebase, database as default };
+  export { firebase, googleProvider, emailProvider, database as default };

@@ -1,14 +1,20 @@
 import React from 'react';
 import { NavLink } from  'react-router-dom';
+import { connect } from 'react-redux';
+import { startLogOut } from '../actions/auth'
 
-const Header = () => (
+export const Header = (props) => (
     <header>
         <h1>Expensify</h1>
-        <NavLink to="/" exact={true} activeClassName="is-active">Dashboard</NavLink>
+        <NavLink to="/dashborad" exact={true} activeClassName="is-active">Dashboard</NavLink>
         <NavLink to="/create" activeClassName="is-active">Create Expense</NavLink>
-        {/* <NavLink to="/edit" activeClassName="is-active">Edit Expense</NavLink> */}
         <NavLink to="/help" activeClassName="is-active">Help</NavLink>
+        <button onClick={props.loggout}> LogOut </button>
     </header>
 );
 
-export default Header;
+const mapDispatchToProps = (dispatch) => ({
+    loggout: () => dispatch(startLogOut())
+});
+
+export default connect(undefined, mapDispatchToProps)(Header);
