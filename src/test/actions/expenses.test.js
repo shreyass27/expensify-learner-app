@@ -4,6 +4,8 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import database from '../../firebase/firebase';
 
+const uid = 'thisIsMyDummyUiD';
+const defaultAuthState = { auth: { uid }};
 const createMockStore = configureStore([thunk]);
 
 test('should setup remove expense action object', () => {
@@ -39,7 +41,7 @@ test('should setup add expense action object with provided value', () => {
 
 
 test('should add expense to database and store', (done) => {
-    const store = createMockStore({});
+    const store = createMockStore(defaultAuthState);
     const expenseData = {
         description: 'Gum',
         note: '',
@@ -56,7 +58,7 @@ test('should add expense to database and store', (done) => {
             }
         });
 
-        database.ref(`expenses/${actions[0].expense.id}`).once('value').then(
+        database.ref(`users/${uid}/expenses/${actions[0].expense.id}`).once('value').then(
             (snapshot) => {
                 expect(snapshot.val()).toEqual(expenseData);
                 done();
